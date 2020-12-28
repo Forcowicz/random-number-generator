@@ -20,14 +20,14 @@ html {
     line-height: 1.2;
     color: black;
     max-width: 100vw;
-    max-height: 100vh;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    height: 100%;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
     background-color: var(--color-tertiary);
     font-size: 1.6rem;
     margin: 0;
@@ -45,11 +45,16 @@ a:hover {
     color: #e75555;
 }
 
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: white;
     width: 80%;
     height: 80%;
@@ -84,27 +89,6 @@ a:hover {
     background-color: var(--color-grey);
     overflow-y: auto;
     overflow-x: hidden;
-}
-
-.divider {
-    width: 100%;
-    display: block;
-}
-
-.divider::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.divider__left {
-    width: 50%;
-    float: left;
-}
-
-.divider__right {
-    width: 50%;
-    float: right;
 }
 
 .input__group {
@@ -227,4 +211,96 @@ a:hover {
     font-size: 1.2rem;
     color: var(--color-tertiary);
     font-weight: 700;
+}
+
+/*
+1200px = 75em
+800px = 50em
+650px = 40.625em
+500px = 31.25em
+900px = 56.25em
+ */
+
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    html {
+        font-size: 50%;
+    }
+
+    .input__group {
+        margin-top: 8rem;
+    }
+}
+
+@media only screen and (max-width: 40.625em) {
+    .container {
+        position: relative;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .content__right {
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .numbers {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        min-height: 10rem;
+        height: auto;
+    }
+
+    .numbers__element {
+        flex: 0 0 25%;
+        text-align: center;
+    }
+
+    .numbers__element:not(:last-child) {
+        margin-right: 2rem;
+    }
+}
+
+@media only screen and (max-height: 56.25em) {
+    html {
+        font-size: 50%;
+    }
+
+    .input__group:not(:first-of-type) {
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 31.25em) {
+    html {
+        font-size: 45%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .input__label {
+        font-size: 1.6rem;
+    }
+
+    .input__header {
+        font-size: 2.4rem;
+    }
+
+    .input__group {
+        margin-top: 2rem;
+    }
+
+    .heading {
+        font-size: 2.8rem;
+    }
 }
