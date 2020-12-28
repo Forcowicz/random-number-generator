@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Random Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<div class="container">
+    <section class="content__left">
+        <h1 class="heading">Generate random number!</h1>
+        <div class="input__group">
+            <span class="input__header">From</span>
+            <input class="input" type="number" id="inputRangeFrom" required>
+            <label class="input__label" for="inputRangeFrom" id="inputRangeFromLabel">Enter a number</label>
+        </div>
+        <div class="input__group">
+            <span class="input__header">To</span>
+            <input class="input" type="number" id="inputRangeTo" required>
+            <label class="input__label" for="inputRangeTo" id="inputRangeToLabel">Enter a number</label>
+        </div>
+        <div class="input__group">
+            <span class="input__header">Amount</span>
+            <input class="input" type="number" id="inputAmount" required>
+            <label class="input__label" for="inputAmount" id="inputAmountLabel">Enter a number</label>
+        </div>
+        <button class="input__button">Generate</button>
+        <small class="caption">
+            No, this website does not use cookies or similar technologies <br>
+            Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+        </small>
+    </section>
+    <section class="content__right">
+        <h1 class="numbers__header">Your numbers</h1>
+        <section class="numbers">
+        </section>
+    </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
