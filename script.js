@@ -14,30 +14,30 @@ const generateNumber = function (min, max, amount) {
 }
 
 const inputError = function (el, errorCode) {
-    const elementLabel = document.getElementById(`${el.id}Label`);
+    const elementError = document.getElementById(`${el.id}Error`);
+    elementError.classList.remove('hidden');
     btn.setAttribute('disabled', true);
     switch (errorCode) {
         case 0:
-            elementLabel.textContent = 'This field cannot be empty!';
+            elementError.textContent = 'This field cannot be empty!';
             break;
         case 1:
-            elementLabel.textContent = 'The minimal value cannot be higher than the maximum value!';
+            elementError.textContent = 'The minimal value cannot be higher than the maximum value!';
             break;
         case 2:
-            elementLabel.textContent = 'The values must be different!';
+            elementError.textContent = 'The values must be different!';
             break;
         case 3:
-            elementLabel.textContent = 'The value cannot be 0 or below!';
+            elementError.textContent = 'The value cannot be 0 or below!';
             break;
         case 4:
-            elementLabel.textContent = 'Due to performance issues, the value cannot be above 500!';
+            elementError.textContent = 'Due to performance issues, the value cannot be above 500!';
             break;
     }
     el.classList.add('input--invalid');
     setTimeout(() => {
         btn.removeAttribute('disabled');
-        elementLabel.textContent = 'Enter a number!';
-        el.classList.remove('input--invalid');
+        elementError.classList.add('hidden');
     }, 3000);
 }
 

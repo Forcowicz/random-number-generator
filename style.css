@@ -45,6 +45,17 @@ a:hover {
     color: #e75555;
 }
 
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
@@ -77,6 +88,10 @@ a:hover {
 
 .content__left {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
     flex: 1 0;
 }
@@ -112,10 +127,12 @@ a:hover {
 .input {
     display: inline-block;
     padding: 2rem .75rem .75rem .75rem;
-    border: 3px solid var(--color-tertiary);
-    font-size: 1.6rem;
+    border: none;
+    border-bottom: 3px solid var(--color-tertiary);
+    font-size: 2.4rem;
     font-family: inherit;
     font-weight: 700;
+    text-align: center;
     color: var(--color-tertiary);
     transition: all .15s;
     background-color: transparent;
@@ -127,24 +144,21 @@ a:hover {
     outline: none;
 }
 
-.input--invalid {
-    background-color: rgba(255, 0, 0, .25);
-}
-
 .input__label {
     position: absolute;
     bottom: 1.1rem;
-    left: 1.25rem;
-    font-size: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.2rem;
     font-weight: 700;
-    color: var(--color-tertiary);
+    text-transform: uppercase;
+    color: var( --color-tertiary);
     transition: all .1s;
 }
 
 .input:focus + .input__label, .input:valid + .input__label {
-    font-size: 1rem;
-    bottom: 3.25rem;
-    left: 1rem;
+    font-size: 1.8rem;
+    bottom: 4.5rem;
 }
 
 .input__button {
@@ -171,6 +185,24 @@ a:hover {
 
 .input__button:disabled {
     background-color: grey;
+}
+
+.input__button:active {
+    transform: translateY(3px);
+}
+
+.input__error {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-tertiary);
+    transition: all .15s;
+    z-index: 10;
 }
 
 .numbers__header {
@@ -223,17 +255,17 @@ a:hover {
 
 @media only screen and (max-width: 75em) {
     html {
-        font-size: 60%;
+        font-size: 70%;
     }
 }
 
 @media only screen and (max-width: 50em) {
     html {
-        font-size: 50%;
+        font-size: 60%;
     }
 
     .input__group {
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 }
 
@@ -275,7 +307,7 @@ a:hover {
     }
 
     .input__group:not(:first-of-type) {
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 }
 
@@ -289,11 +321,17 @@ a:hover {
     }
 
     .input__label {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
     }
 
     .input__header {
         font-size: 2.4rem;
+    }
+
+    .input__error {
+        padding: .5rem;
+        background-color: white;
+        box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .25);
     }
 
     .input__group {

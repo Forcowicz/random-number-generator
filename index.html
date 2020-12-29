@@ -13,19 +13,19 @@
     <section class="content__left">
         <h1 class="heading">Generate random number!</h1>
         <div class="input__group">
-            <span class="input__header">From</span>
             <input class="input" type="number" id="inputRangeFrom" required>
-            <label class="input__label" for="inputRangeFrom" id="inputRangeFromLabel">Enter a number</label>
+            <label class="input__label" for="inputRangeFrom" id="inputRangeFromLabel">From</label>
+            <span class="input__error hidden" id="inputRangeFromError">Błąd</span>
         </div>
         <div class="input__group">
-            <span class="input__header">To</span>
             <input class="input" type="number" id="inputRangeTo" required>
-            <label class="input__label" for="inputRangeTo" id="inputRangeToLabel">Enter a number</label>
+            <label class="input__label" for="inputRangeTo" id="inputRangeToLabel">To</label>
+            <span class="input__error hidden" id="inputRangeToError">Błąd</span>
         </div>
         <div class="input__group">
-            <span class="input__header">Amount</span>
             <input class="input" type="number" id="inputAmount" required>
-            <label class="input__label" for="inputAmount" id="inputAmountLabel">Enter a number</label>
+            <label class="input__label" for="inputAmount" id="inputAmountLabel">Amount</label>
+            <span class="input__error hidden" id="inputAmountError">Błąd</span>
         </div>
         <button class="input__button">Generate</button>
         <small class="caption">
