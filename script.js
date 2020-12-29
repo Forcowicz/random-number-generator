@@ -22,7 +22,7 @@ const inputError = function (el, errorCode) {
             elementError.textContent = 'This field cannot be empty!';
             break;
         case 1:
-            elementError.textContent = `The value must be above ${el.value}`;
+            elementError.textContent = `The value must be above ${inputRangeFrom.value}`;
             break;
         case 2:
             elementError.textContent = 'The values must be different!';
@@ -52,12 +52,12 @@ btn.addEventListener('click', () => {
     const inputRangeToValue = Number(inputRangeTo.value);
     inputAmount = document.getElementById('inputAmount');
     const sectionNumbers = document.querySelector('.numbers');
-    if(!inputRangeFromValue) {
+    if(inputRangeFrom.value === '') {
         inputError(inputRangeFrom, 0);
-    } else if(!inputRangeToValue) {
+    } else if(inputRangeTo.value === '') {
         inputError(inputRangeTo, 0);
     } else if(inputRangeFromValue > inputRangeToValue) {
-        inputError(inputRangeFrom, 1)
+        inputError(inputRangeTo, 1)
     } else if(inputRangeFromValue === inputRangeToValue) {
         inputError(inputRangeFrom, 2);
     } else if(inputAmount.value <= 0 && inputAmount.value !== '') {
