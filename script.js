@@ -22,7 +22,7 @@ const inputError = function (el, errorCode) {
             elementError.textContent = 'This field cannot be empty!';
             break;
         case 1:
-            elementError.textContent = 'The minimal value cannot be higher than the maximum value!';
+            elementError.textContent = `The value must be above ${el.value}`;
             break;
         case 2:
             elementError.textContent = 'The values must be different!';
