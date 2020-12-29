@@ -31,7 +31,7 @@ const inputError = function (el, errorCode) {
             elementError.textContent = 'The value cannot be 0 or below!';
             break;
         case 4:
-            elementError.textContent = 'Due to performance issues, the value cannot be above 500!';
+            elementError.textContent = 'The value cannot be above 500!';
             break;
     }
     el.classList.add('input--invalid');
